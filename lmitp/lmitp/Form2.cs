@@ -14,13 +14,14 @@ namespace lmitp
     {
         public event EventHandler DataChanged;
         addForm addform = new addForm();
+
         public Form2()
         {
             InitializeComponent();
 
             LoadFormData();
             addform.DataSelected += Addform_DataSelected;
-
+          
 
         }
         private void HandleDataChanged()
@@ -51,6 +52,7 @@ namespace lmitp
         {
             // Clear existing data in GlobalData.Form2Data
             GlobalData.Form2Data.Clear();
+            GlobalData.Form3Data.Clear();
 
             // Load data from DataGridView to GlobalData.Form2Data
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -63,6 +65,8 @@ namespace lmitp
                         rowData[i] = Convert.ToString(row.Cells[i].Value);
                     }
                     GlobalData.Form2Data.Add(rowData);
+                    GlobalData.Form3Data.Add(rowData);
+
                 }
             }
         }
@@ -101,6 +105,8 @@ namespace lmitp
                     // Get the data from addForm
                     string[] data = addform.GetData();
                     GlobalData.Form2Data.Add(data);
+                    GlobalData.Form3Data.Add(data);
+
                     // Add the data to the DataGridView
                     dataGridView1.Rows.Add(data);
 
@@ -160,6 +166,17 @@ namespace lmitp
         {
             UpdateDataGridView();
         }
+        private int GetForm3DataIndex(string productType, string brandName, string pricePerUnit)
+        {
+            for (int i = 0; i < GlobalData.Form3Data.Count; i++)
+            {
+                if (GlobalData.Form3Data[i][0] == productType && GlobalData.Form3Data[i][1] == brandName && GlobalData.Form3Data[i][2] == pricePerUnit)
+                {
+                    return i;
+                }
+            }
+            return -1; // Not found
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -167,7 +184,7 @@ namespace lmitp
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Column5"].Index)
             {
                 int selectedIndex = e.RowIndex;
-                if (selectedIndex < GlobalData.Form2Data.Count)
+                if (selectedIndex < GlobalData.Form2Data.Count && selectedIndex < GlobalData.Form2Data.Count)
                 {
                     DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                     string productType = selectedRow.Cells["Column1"].Value.ToString();
@@ -180,6 +197,9 @@ namespace lmitp
 
                     if (editForm.DialogResult == DialogResult.OK)
                     {
+                        string editedQuantity = editForm.Quantity;
+                        int difference = Convert.ToInt32(editedQuantity) - Convert.ToInt32(quantity); 
+
                         GlobalData.Form2Data[selectedIndex] = new string[]
                         {
                 editForm.ProductType,
@@ -193,7 +213,15 @@ namespace lmitp
                         selectedRow.Cells["Column3"].Value = editForm.PricePerUnit;
                         selectedRow.Cells["Column4"].Value = editForm.Quantity;
 
+                        int form3Index = GetForm3DataIndex(productType, brandName, pricePerUnit);
+                        if (form3Index != -1)
+                        {
+                            int currentQuantity = Convert.ToInt32(GlobalData.Form3Data[form3Index][3]);
+                            GlobalData.Form3Data[form3Index][3] = (currentQuantity + difference).ToString();
+                        }
+
                         HandleDataChanged();
+
                     }
                 }
             }
@@ -203,12 +231,14 @@ namespace lmitp
                 if (MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int selectedIndex = e.RowIndex;
-                    if (selectedIndex < GlobalData.Form2Data.Count)
+                    if (selectedIndex < GlobalData.Form2Data.Count && selectedIndex < GlobalData.Form3Data.Count)
                     {
                         GlobalData.Form2Data.RemoveAt(selectedIndex);
+                        GlobalData.Form3Data.RemoveAt(selectedIndex);
                         dataGridView1.Rows.RemoveAt(selectedIndex);
                         HandleDataChanged();
                     }
+                  
                 }
             }
             

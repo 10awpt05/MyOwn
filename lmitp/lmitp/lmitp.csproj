@@ -86,6 +86,7 @@
     <Compile Include="reportsform.Designer.cs">
       <DependentUpon>reportsform.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaleListData.cs" />
     <Compile Include="Widget.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +124,7 @@
     <EmbeddedResource Include="Widget.resx">
       <DependentUpon>Widget.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\GlobalData.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -174,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -84,3 +84,35 @@ E:\lmitp\lmitp\obj\Debug\lmitp.csproj.GenerateResource.cache
 E:\lmitp\lmitp\obj\Debug\lmitp.csproj.CoreCompileInputs.cache
 E:\lmitp\lmitp\obj\Debug\lmitp.exe
 E:\lmitp\lmitp\obj\Debug\lmitp.pdb
+D:\lmitp\lmitp\bin\Debug\lmitp.exe.config
+D:\lmitp\lmitp\bin\Debug\lmitp.exe
+D:\lmitp\lmitp\bin\Debug\lmitp.pdb
+D:\lmitp\lmitp\obj\Debug\lmitp.csproj.AssemblyReference.cache
+D:\lmitp\lmitp\obj\Debug\lmitp.addForm.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.EditForm.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.Form1.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.Form2.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.Form3.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.Properties.Resources.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.reportsform.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.Components.UserControl1.resources
+D:\lmitp\lmitp\obj\Debug\lmitp.csproj.GenerateResource.cache
+D:\lmitp\lmitp\obj\Debug\lmitp.csproj.CoreCompileInputs.cache
+D:\lmitp\lmitp\obj\Debug\lmitp.exe
+D:\lmitp\lmitp\obj\Debug\lmitp.pdb
+E:\OOP final\lmitp\lmitp\bin\Debug\lmitp.exe.config
+E:\OOP final\lmitp\lmitp\bin\Debug\lmitp.exe
+E:\OOP final\lmitp\lmitp\bin\Debug\lmitp.pdb
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.csproj.AssemblyReference.cache
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.addForm.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.EditForm.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.Form1.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.Form2.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.Form3.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.Properties.Resources.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.reportsform.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.Components.UserControl1.resources
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.csproj.GenerateResource.cache
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.csproj.CoreCompileInputs.cache
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.exe
+E:\OOP final\lmitp\lmitp\obj\Debug\lmitp.pdb

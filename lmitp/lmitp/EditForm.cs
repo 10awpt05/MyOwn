@@ -24,9 +24,9 @@ namespace lmitp
             ProductType1.Text = productType;
             ProductName1.Text = brandName;
             string[] priceAndUnit = pricePerUnit.Split(' ');
-            Prize1.Text = priceAndUnit[0];
+            Quantity1.Text = priceAndUnit[0];
             Quantby1.SelectedItem = priceAndUnit[1];
-            Quantity1.Text = quantity;
+            Prize1.Text = quantity;
 
             // Set form title
             Text = "Edit Item";
@@ -44,8 +44,8 @@ namespace lmitp
                 // Update properties with edited data
                 ProductType = ProductType1.Text;
                 BrandName = ProductName1.Text;
-                PricePerUnit = Prize1.Text + " " + Quantby1.SelectedItem.ToString(); // Updated to Quantby1
-                Quantity = Quantity1.Text;
+                PricePerUnit = Quantity1.Text + " " + Quantby1.SelectedItem.ToString(); // Updated to Quantby1
+                Quantity = Prize1.Text;
 
                 // Set dialog result to OK and close the form
                 DialogResult = DialogResult.OK;
